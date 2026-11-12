@@ -1,0 +1,659 @@
+/* =====================================================
+   ESTILOS DE KEVLAR  (colores: rojo, negro y blanco)
+   Para encontrar algo rápido, buscar el título de la sección:
+   BÁSICO / MENÚ DE ARRIBA / BOTONES / PORTADA / SECCIONES DE INICIO
+   / CATEGORÍAS Y TARJETAS / CARRITO Y COMPRA / FORMULARIOS / FOOTER / CELULAR
+   ===================================================== */
+
+/* ---------- BÁSICO: lo que afecta a toda la página ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;      /* el relleno no agranda las cajas */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0a0a0a;   /* fondo negro */
+    color: white;
+    line-height: 1.5;
+}
+
+a {
+    color: white;
+    text-decoration: none;       /* quita el subrayado de los links */
+}
+
+/* Letra gruesa para los títulos */
+h1, h2, h3 {
+    font-family: Impact, "Arial Black", sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* .contenido: centra todo y no lo deja muy ancho */
+.contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.rojo-texto { color: #d90429; }  /* para poner una palabra en rojo */
+.gris { color: #aaa; }           /* texto gris */
+
+
+/* ---------- MENÚ DE ARRIBA (.barra) ---------- */
+.barra {
+    background-color: #0a0a0a;
+    border-bottom: 3px solid #d90429;   /* línea roja abajo */
+    position: sticky;                    /* se queda pegada arriba al bajar */
+    top: 0;
+    z-index: 10;
+}
+
+.barra-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;                       /* todo en una fila */
+    align-items: center;
+    gap: 30px;
+}
+
+/* Logo: foto redonda + nombre */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;                  /* lo hace redondo */
+    object-fit: cover;
+    border: 2px solid #d90429;
+}
+.logo b {
+    color: #d90429;                      /* "LAR" en rojo */
+    font-weight: normal;
+}
+
+/* Links del menú (Inicio, Catálogo, Registrar) */
+.menu {
+    display: flex;
+    gap: 25px;
+}
+.menu a {
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+.menu a:hover,
+.menu a.activo {
+    border-bottom: 2px solid #d90429;    /* subrayado rojo en la página donde estoy */
+}
+
+/* Esquina derecha: "Hola, nombre" o botón de cuenta */
+.sesion {
+    margin-left: auto;                   /* lo manda hasta la derecha */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* ---------- BOTONES (.boton) ---------- */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+}
+.boton.rojo {
+    background-color: #d90429;
+    border-color: #d90429;
+    color: white;
+}
+.boton.rojo:hover {
+    background-color: #a30320;           /* rojo más oscuro al pasar el mouse */
+    border-color: #a30320;
+}
+.boton.blanco {
+    background-color: transparent;
+    color: white;
+}
+.boton.blanco:hover {
+    background-color: white;
+    color: black;
+}
+.boton.grande {
+    padding: 14px 28px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.boton.completo {
+    width: 100%;                         /* botón de lado a lado */
+    margin-top: 15px;
+}
+
+
+/* ---------- PORTADA (.portada): lo primero que se ve en Inicio ----------
+   La foto de fondo es img/fondo-hero.jpg (aquí se cambia).
+   Encima de la foto hay un degradado negro para que se lea el texto. */
+.portada {
+    background-color: #0a0a0a;
+    background-image:
+        linear-gradient(90deg, rgba(10,10,10,0.8), rgba(10,10,10,0.2)),
+        url("../img/fondo-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    border-bottom: 1px solid #2c2c2c;
+}
+.pequeno {
+    color: #d90429;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.portada h1 {
+    font-size: 90px;
+    line-height: 1;
+    margin: 10px 0 20px 0;
+}
+.texto-portada {
+    max-width: 550px;
+    color: #ddd;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+/* ---------- SECCIONES DE INICIO (Quiénes somos y Destacados) ---------- */
+.seccion {
+    padding: 60px 0;
+}
+.seccion.oscura {
+    background-color: #141414;           /* negro un poco más claro */
+}
+.seccion h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+/* Las 3 cajitas de "Quiénes somos" */
+.cajas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;                     /* si no caben, bajan a otra fila */
+}
+.caja {
+    flex: 1;
+    min-width: 250px;
+    background-color: #1b1b1b;
+    border-top: 3px solid #d90429;
+    border-radius: 8px;
+    padding: 25px;
+}
+.caja h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.caja p {
+    color: #ccc;
+}
+
+
+/* ---------- CATEGORÍAS Y TARJETAS DE PRODUCTOS ---------- */
+
+/* Título gris de arriba (Trajes, Armas o Accesorios) */
+.encabezado-pagina {
+    background-color: #141414;
+    padding: 40px 0;
+    border-bottom: 1px solid #2c2c2c;
+}
+.encabezado-pagina h1 {
+    font-size: 60px;
+}
+.encabezado-pagina p {
+    color: #aaa;
+}
+
+/* .productos: acomoda las tarjetas en columnas (se adapta al ancho de la pantalla) */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 25px;
+}
+.producto {
+    background-color: #1b1b1b;
+    border: 1px solid #2c2c2c;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.producto:hover {
+    border-color: #d90429;
+}
+
+/* Parte de arriba de la tarjeta (.foto).
+   Si la foto no carga, se ve este fondo rojo. */
+.foto {
+    position: relative;
+    height: 210px;
+    background: linear-gradient(135deg, #2a0008, #d90429);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    overflow: hidden;
+}
+.foto img {
+    position: absolute;                  /* la foto llena toda la caja */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Sombra oscura abajo de la foto para que se lea el nombre del héroe */
+.foto::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 60%);
+}
+/* Etiqueta de arriba a la izquierda (Trajes, Armas, Accesorios) */
+.etiqueta {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;                          /* para que quede encima de la foto */
+    background-color: black;
+    border-left: 3px solid #d90429;
+    padding: 3px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+/* Nombre del héroe sobre la foto */
+.heroe {
+    position: relative;
+    z-index: 2;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 30px;
+}
+
+/* Parte de abajo de la tarjeta (.info): nombre, descripción y precio */
+.info {
+    padding: 20px;
+}
+.info h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+.info p {
+    color: #bbb;
+    font-size: 14px;
+    min-height: 60px;
+}
+.pie-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #2c2c2c;
+}
+.precio {
+    font-size: 19px;
+    font-weight: bold;
+}
+/* Stock: verde si hay piezas, rojo si está agotado */
+.stock {
+    color: #6fd99b;
+    font-size: 13px;
+}
+.stock.agotado {
+    color: #d90429;
+}
+
+
+/* ---------- CARRITO Y COMPRA ---------- */
+
+/* Botón "Agregar al carrito" de cada tarjeta */
+.agregar {
+    margin-top: 15px;
+}
+.agregar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d90429;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+}
+.agregar button:hover {
+    background-color: #a30320;
+}
+.agregar button:disabled {
+    background-color: #333;       /* gris cuando está agotado */
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Numerito rojo del menú con las piezas del carrito */
+.contador {
+    background-color: #d90429;
+    border-radius: 10px;
+    padding: 1px 7px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Cada fila de la página del carrito */
+.carrito-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.carrito-fila {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #1b1b1b;
+    border: 1px solid #2c2c2c;
+    border-radius: 8px;
+    padding: 12px;
+}
+.carrito-fila img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #2a0008, #d90429);
+}
+.carrito-datos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.carrito-datos h3 {
+    font-size: 20px;
+}
+
+/* Botones - y + para cambiar la cantidad */
+.carrito-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.carrito-cantidad button {
+    width: 30px;
+    height: 30px;
+    background-color: #0a0a0a;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.carrito-cantidad button:hover {
+    background-color: #d90429;
+    border-color: #d90429;
+}
+.carrito-subtotal {
+    min-width: 110px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Total y botón de vaciar */
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+.carrito-total .total {
+    font-size: 24px;
+}
+.carrito-vacio {
+    text-align: center;
+    padding: 40px 0;
+}
+.carrito-vacio p {
+    margin-bottom: 20px;
+}
+
+
+/* Total + botón de comprar */
+.total-comprar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.total-comprar .boton.grande {
+    margin-right: 0;
+}
+
+/* Pantalla de compra: resumen a la izquierda y formulario a la derecha */
+.compra {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.compra-resumen,
+.compra-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: #1b1b1b;
+    border: 1px solid #2c2c2c;
+    border-top: 3px solid #d90429;
+    border-radius: 8px;
+    padding: 25px;
+}
+.compra h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #2c2c2c;
+    font-size: 14px;
+}
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.titulo-campo {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+.compra-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #0a0a0a;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.compra-form input[type="text"]:focus {
+    outline: none;
+    border-color: #d90429;
+}
+/* Las dos opciones de pago (tarjeta y código promocional) */
+.opcion-pago {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.opcion-pago:hover {
+    border-color: #d90429;
+}
+.opcion-pago input {
+    accent-color: #d90429;
+}
+
+/* Cajas de la página de pedidos */
+.pedido-caja {
+    background-color: #1b1b1b;
+    border: 1px solid #2c2c2c;
+    border-left: 4px solid #d90429;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.pedido-cabeza {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.pedido-cabeza h3 {
+    font-size: 22px;
+}
+.pedido-datos {
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+/* ---------- FORMULARIOS (registrar y cuenta) ---------- */
+.formulario-fondo {
+    padding: 50px 20px;
+}
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #1b1b1b;
+    border: 1px solid #2c2c2c;
+    border-top: 4px solid #d90429;
+    border-radius: 10px;
+    padding: 30px;
+}
+.formulario h1 {
+    font-size: 42px;
+}
+.formulario form {
+    margin-top: 20px;
+}
+.formulario label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.formulario input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #0a0a0a;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.formulario input:focus {
+    outline: none;
+    border-color: #d90429;               /* borde rojo al escribir */
+}
+/* Texto de abajo: "¿Ya tienes cuenta?" */
+.alternativa {
+    text-align: center;
+    margin-top: 20px;
+    color: #aaa;
+}
+.alternativa a {
+    color: #d90429;
+    font-weight: bold;
+}
+
+/* Avisos: .error = rojo, .bien = verde */
+.aviso {
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-left: 4px solid;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.aviso.error {
+    background-color: #2a1015;
+    border-color: #d90429;
+}
+.aviso.bien {
+    background-color: #14231a;
+    border-color: #2fbf71;
+}
+
+
+/* ---------- FOOTER (pie de página) ---------- */
+.footer {
+    background-color: #141414;
+    border-top: 3px solid #d90429;
+    margin-top: 40px;
+}
+.footer-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;      /* logo a la izquierda, código a la derecha */
+    align-items: center;
+}
+/* El código MME-0869 en rojo */
+.folio {
+    color: #d90429;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+
+/* ---------- CELULAR (pantallas chicas) ---------- */
+@media (max-width: 700px) {
+    .barra-contenido {
+        flex-wrap: wrap;                 /* el menú baja a otra fila */
+        gap: 10px 20px;
+    }
+    .portada h1 {
+        font-size: 55px;
+    }
+    .carrito-fila {
+        flex-wrap: wrap;
+    }
+    .carrito-subtotal {
+        text-align: left;
+    }
+    .carrito-total {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
